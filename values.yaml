@@ -1,8 +1,7 @@
 replicaCount: 1
 
 image:
-#  repository: depot.snc.minsi.fr/testmrq/test-mrq
-  repository: https://depot.snc.minsi.fr//testmrq/test-mrq
+  repository: depot.snc.minsi.fr/testmrq/test-mrq
   tag: "main"
   pullPolicy: IfNotPresent
 
