@@ -1,13 +1,25 @@
 replicaCount: 1
 
 image:
-  repository: depot.snc.minsi.fr/testmrq/test-mrq
+#  repository: depot.snc.minsi.fr/testmrq/test-mrq
+  repository: https://depot.snc.minsi.fr//testmrq/test-mrq
   tag: "main"
   pullPolicy: IfNotPresent
 
 service:
   type: ClusterIP
   port: 5000
+
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: heloworld.qual.snc.gendarmerie.interieur.gouv.fr
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
 
 resources:
   limits:
